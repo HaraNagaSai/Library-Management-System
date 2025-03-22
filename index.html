@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="A simple Library Management System for managing books, users, and transactions.">
+    <meta name="keywords" content="library, management, system, books, users, transactions">
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+    </header>
+
+    <section id="auth-section">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" placeholder="Enter username" aria-label="Username">
+        </div>
+        <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter password" aria-label="Password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+            <button onclick="showSignup()">Sign Up Instead</button>
+        </div>
+    </section>
+
+    <section id="signup-section" style="display: none;">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" placeholder="Choose a username" aria-label="Username">
+        </div>
+        <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="Choose a password" aria-label="Password">
+        </div>
+        <div class="form-group">
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="showLogin()">Login Instead</button>
+        </div>
+    </section>
+
+    <section id="library-section" style="display: none;">
+        <h2>Search Books</h2>
+        <div class="search-form">
+            <label for="search-query">Search by Title or Author</label>
+            <input type="text" id="search-query" placeholder="Enter book title or author" aria-label="Search by Title or Author">
+            <button onclick="searchBook()">Search</button>
+        </div>
+
+        <h2>Available Books</h2>
+        <table class="book-list" id="book-list">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Availability</th>
+                    <th>Due Date</th>
+                    <th>Fine (₹)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Check Out Book</h2>
+        <div class="form-group">
+            <label for="book-id">Book ID</label>
+            <input type="number" id="book-id" placeholder="Enter Book ID to check out" min="1" aria-label="Book ID">
+        </div>
+        <div class="form-group">
+            <button onclick="processCheckout()">Check Out</button>
+        </div>
+
+        <h2>Return Book</h2>
+        <div class="form-group">
+            <label for="return-book-id">Book ID</label>
+            <input type="number" id="return-book-id" placeholder="Enter Book ID to return" min="1" aria-label="Return Book ID">
+        </div>
+        <div class="form-group">
+            <button onclick="processReturn()">Return Book</button>
+        </div>
+
+        <div class="form-group">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
